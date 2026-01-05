@@ -1,0 +1,45 @@
+{
+  "name": "dependency-audit-demo",
+  "version": "1.0.0",
+  "description": "Sample project with optimized dependencies",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest",
+    "audit": "npm audit",
+    "audit:fix": "npm audit fix",
+    "outdated": "npm outdated"
+  },
+  "dependencies": {
+    "express": "^4.22.1",
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "uuid": "^13.0.0",
+    "validator": "^13.13.0",
+    "date-fns": "^4.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "eslint": "^9.39.2",
+    "nodemon": "^3.1.11"
+  },
+  "comments": {
+    "removed": [
+      "request - deprecated, replaced with axios",
+      "moment - deprecated, replaced with date-fns",
+      "lodash - removed, use native methods or specific imports if needed",
+      "webpack - removed as it's not used in this simple Node.js app",
+      "webpack-cli - removed along with webpack"
+    ],
+    "updated": [
+      "axios - updated from 0.21.1 to 1.13.2 (security fixes)",
+      "uuid - updated from 8.3.2 to 13.0.0 (security & features)",
+      "dotenv - updated from 8.2.0 to 17.2.3 (bug fixes)",
+      "jest - updated from 26.6.3 to 30.2.0 (security & features)",
+      "eslint - updated from 7.20.0 to 9.39.2 (new rules & fixes)",
+      "nodemon - updated from 2.0.7 to 3.1.11 (security fixes)",
+      "validator - updated to latest"
+    ]
+  }
+}

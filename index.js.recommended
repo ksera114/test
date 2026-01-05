@@ -1,0 +1,26 @@
+const express = require('express');
+const axios = require('axios');
+const { format } = require('date-fns');
+const { v4: uuidv4 } = require('uuid');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  const data = {
+    id: uuidv4(),
+    timestamp: format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
+    message: 'Hello World'
+  };
+  res.json(data);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+// Note: Removed lodash usage - modern JavaScript has most lodash functionality built-in
+// Examples:
+// - lodash.map() -> Array.map()
+// - lodash.filter() -> Array.filter()
+// - lodash.cloneDeep() -> structuredClone() (Node 17+) or JSON.parse(JSON.stringify())
